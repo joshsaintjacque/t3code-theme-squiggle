@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Squiggle · a Memphis-style theme for T3 Code</title>
+<meta name="description" content="A loud, light theme for T3 Code. Confetti, squiggles and terrazzo sit in the margins and start to bob and tumble while your agent works.">
+<link rel="canonical" href="https://joshsaintjacque.github.io/t3code-theme-squiggle/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Squiggle · a Memphis-style theme for T3 Code">
+<meta property="og:description" content="Confetti, squiggles and terrazzo that bob and tumble while your agent works. A light theme for T3 Code.">
+<meta property="og:image" content="https://joshsaintjacque.github.io/t3code-theme-squiggle/assets/og.png">
+<meta property="og:url" content="https://joshsaintjacque.github.io/t3code-theme-squiggle/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Squiggle · a Memphis-style theme for T3 Code">
+<meta name="twitter:description" content="Confetti, squiggles and terrazzo that bob and tumble while your agent works.">
+<meta name="twitter:image" content="https://joshsaintjacque.github.io/t3code-theme-squiggle/assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23ffd23f'/%3E%3Cpath d='M4 17q4-10 8 0t8 0t8 0' fill='none' stroke='%232f3cff' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800;900&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1340;--bl:#2f3cff;--pk:#ff5c9d;--hp:#ff2e88;--yl:#ffd23f;--mt:#3fdcb4;--or:#ff8a3d;--lv:#b9a6ff;--bg:#f6f2ff;--lem:#ffee9a;
+--head:"Unbounded",Futura,"Avenir Next",sans-serif;--body:"Nunito",ui-rounded,"Avenir Next",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 18px/1.6 var(--body);overflow-x:hidden;
+background-image:radial-gradient(circle,#d9cffa 2px,transparent 2.5px);background-size:36px 36px}
+a{color:var(--bl);text-decoration:underline wavy var(--pk) 1.5px;text-underline-offset:5px}
+img,video{display:block;max-width:100%}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;position:relative}
+h1,h2,h3{font-family:var(--head);line-height:1.05;margin:0}
+.eyebrow{display:inline-block;font:800 13px/1 var(--head);letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:#fff;padding:9px 14px;border-radius:99px}
+.btn{display:inline-flex;align-items:center;gap:10px;font:800 16px/1 var(--body);padding:16px 22px;border:3px solid var(--ink);border-radius:16px;background:#fff;color:var(--ink);text-decoration:none;cursor:pointer;box-shadow:5px 5px 0 var(--ink);transition:transform .15s cubic-bezier(.3,1.6,.5,1),box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn.pri{background:var(--bl);color:#fff}
+.btn.yel{background:var(--yl)}
+.btn:focus-visible,.pal button:focus-visible,summary:focus-visible{outline:4px solid var(--hp);outline-offset:3px}
+/* hero */
+.hero{padding:56px 0 80px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;gap:34px}
+.lede{margin-top:0!important}
+.hero h1{font-weight:900;font-size:clamp(46px,12.5vw,148px);letter-spacing:-.04em;margin:20px 0 8px}
+.hero h1 span{display:inline-block}
+.squig{display:block;width:min(560px,86%);height:34px;color:var(--pk)}
+.lede{font-size:clamp(19px,2.4vw,24px);max-width:36ch;margin:0 0 28px;font-weight:700}
+.cta{display:flex;flex-wrap:wrap;gap:16px}
+.film{position:relative;border:4px solid var(--ink);border-radius:20px;background:var(--ink);box-shadow:12px 12px 0 var(--pk);overflow:hidden}
+.film video{width:100%;height:auto;aspect-ratio:16/9;background:var(--lem)}
+.film .tag{position:absolute;left:14px;top:14px;background:#fff;border:3px solid var(--ink);border-radius:99px;font:800 12px/1 var(--head);letter-spacing:.1em;padding:8px 12px;text-transform:uppercase}
+.sh{position:absolute;pointer-events:none;animation:bob var(--d,3s) ease-in-out infinite alternate}
+.sh.sp{animation-name:spin2;animation-timing-function:cubic-bezier(.65,0,.35,1);animation-direction:normal;animation-duration:var(--d,10s)}
+@keyframes bob{from{translate:0 -10px}to{translate:0 10px}}
+@keyframes spin{to{rotate:360deg}}@keyframes spin2{0%,30%{rotate:0}100%{rotate:360deg}}
+@media (min-width:900px){.hero .wrap{grid-template-columns:4fr 8fr;align-items:center}.ttl{grid-column:1/-1}}
+/* bands */
+section{padding:84px 0;position:relative}
+.band{background:var(--lem);border-block:4px solid var(--ink)}
+.band.mint{background:#c9f6ea}
+.sec-h{font-size:clamp(34px,6vw,64px);font-weight:900;letter-spacing:0;margin:18px 0 12px}
+.sub{max-width:52ch;font-weight:700;margin:0 0 44px}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.card{background:#fff;border:3px solid var(--ink);border-radius:20px;padding:26px 24px 24px;box-shadow:7px 7px 0 var(--ink);position:relative}
+.card:nth-child(3n+1){box-shadow:7px 7px 0 var(--pk)}.card:nth-child(3n+2){box-shadow:7px 7px 0 var(--bl)}.card:nth-child(3n){box-shadow:7px 7px 0 var(--mt)}
+.card .st{font:800 12px/1 var(--head);letter-spacing:.12em;text-transform:uppercase;color:#c4004f;margin-bottom:12px}
+.card h3{font-size:22px;margin-bottom:10px}
+.card p{margin:0;font-weight:600}
+.card svg{width:64px;height:64px;float:right;margin:-6px -4px 8px 12px;overflow:visible}
+.card:hover svg .mv{animation-play-state:running}
+.mv{animation:bob 1.5s ease-in-out infinite alternate;animation-play-state:paused;transform-box:fill-box;transform-origin:center}
+.mv.w{animation-name:wig}@keyframes wig{from{rotate:-10deg}to{rotate:10deg}}
+.mv.t{animation:spin 6s cubic-bezier(.65,0,.35,1) infinite;animation-play-state:paused}
+/* demo */
+.demo .film{box-shadow:12px 12px 0 var(--bl)}
+.demo video{aspect-ratio:16/9}
+/* palette */
+.pal{display:grid;gap:0;border:3px solid var(--ink);border-radius:20px;overflow:hidden;background:#fff;box-shadow:8px 8px 0 var(--ink)}
+.pal button{all:unset;box-sizing:border-box;display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:16px;padding:12px 18px;cursor:pointer;border-bottom:2px solid var(--ink);font:700 17px/1.3 var(--body)}
+.pal button:last-child{border-bottom:0}
+.pal button:hover{background:var(--lem)}
+.pal .sw{width:44px;height:44px;border-radius:12px;border:3px solid var(--ink)}
+.pal small{display:block;font-weight:600;color:#4f4380;font-size:14px}
+.pal code{font:800 16px ui-monospace,Menlo,monospace;background:#ece6ff;border:2px solid var(--ink);border-radius:8px;padding:4px 9px}
+.pal button.ok code{background:var(--mt)}
+.toast{position:fixed;left:50%;bottom:26px;translate:-50% 90px;background:var(--ink);color:#fff;font:800 15px var(--body);padding:12px 20px;border-radius:99px;transition:translate .3s cubic-bezier(.3,1.6,.5,1);z-index:9;pointer-events:none}
+.toast.on{translate:-50% 0}
+/* install */
+.steps{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.box{background:#fff;border:3px solid var(--ink);border-radius:20px;padding:26px;box-shadow:7px 7px 0 var(--ink)}
+.box h3{font-size:22px;margin-bottom:12px}
+.box ol{padding-left:22px;margin:0 0 20px;font-weight:600}
+.box .row{display:flex;flex-wrap:wrap;gap:12px}
+pre{margin:0;background:#d8f7eb;border:3px solid var(--ink);border-radius:14px;padding:16px;overflow:auto;font:700 14px/1.6 ui-monospace,Menlo,monospace;box-shadow:4px 4px 0 var(--ink);white-space:pre-wrap;word-break:break-all}
+.copyline{display:flex;justify-content:flex-end;margin-top:12px}
+footer{background:var(--ink);color:#e7e1ff;padding:44px 0 60px;border-top:4px solid var(--ink)}
+footer a{color:#fff}
+footer p{margin:6px 0;font-weight:600;font-size:16px}
+.fz{display:block;width:160px;height:20px;color:var(--pk);margin-bottom:18px}
+@media (max-width:899px){.hero{padding-bottom:56px}.hero>svg.sp{display:none}.hero>svg.sh{display:none}}
+@media (max-width:640px){body{font-size:17px}section{padding:60px 0}.pal button{grid-template-columns:44px 1fr;row-gap:6px}.pal .sw{width:36px;height:36px}.pal code{grid-column:2;justify-self:start}.film{box-shadow:7px 7px 0 var(--pk)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.detail{margin:34px 0 0}.detail img{display:block;width:100%;height:auto;border:3px solid #1b1340;border-radius:16px;box-shadow:6px 6px 0 #ff5c9d}.detail figcaption{margin-top:14px;font-weight:600}
+</style>
+</head>
+<body>
+<header class="hero">
+  <i class="sh" style="--d:3s;right:6%;top:30px;width:70px;height:70px;border-radius:50%;background:var(--bl);border:4px solid var(--ink)"></i>
+  <svg class="sh sp" style="--d:10s;left:30%;bottom:22px;width:74px;height:70px" viewBox="0 0 74 70" aria-hidden="true"><path d="M37 5l32 58H5z" fill="#ffd23f" stroke="#1b1340" stroke-width="5" stroke-linejoin="round"/></svg>
+  <svg class="sh" style="--d:2.5s;left:3%;bottom:30px;width:130px;height:40px" viewBox="0 0 130 40" aria-hidden="true"><path d="M5 20q15-30 30 0t30 0t30 0t30 0" fill="none" stroke="#3fdcb4" stroke-width="10" stroke-linecap="round"/></svg>
+  <div class="wrap">
+    <div class="ttl">
+      <span class="eyebrow">A theme for T3 Code</span>
+      <h1>Squiggle</h1>
+      <svg class="squig" viewBox="0 0 560 34" preserveAspectRatio="none" aria-hidden="true"><path d="M4 17q35-34 70 0t70 0t70 0t70 0t70 0t70 0t70 0t70 0" fill="none" stroke="currentColor" stroke-width="12" stroke-linecap="round"/></svg>
+    </div>
+    <div class="intro">
+      <p class="lede">Light, loud and a little silly. Confetti sits in the margins until your agent starts working, then it bobs and tumbles.</p>
+      <div class="cta">
+        <button class="btn pri" id="copyJson" type="button">Copy theme JSON</button>
+        <a class="btn yel" href="squiggle.json" download>Download</a>
+      </div>
+    </div>
+    <div class="film">
+      <video id="hero" src="assets/hero.mp4" poster="assets/hero.jpg" autoplay muted loop playsinline preload="auto" aria-label="Squiggle in T3 Code: confetti shapes bobbing and tumbling in the margins while an agent works"></video>
+      <span class="tag">Live: agent working</span>
+    </div>
+  </div>
+</header>
+
+<section class="band" id="moves">
+  <div class="wrap">
+    <span class="eyebrow">What moves, and why</span>
+    <h2 class="sec-h">Confetti with a job.</h2>
+    <p class="sub">Every bit of motion is tied to something the app is actually doing. If nothing is running, nothing moves.</p>
+    <div class="grid">
+      <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="mv" cx="30" cy="30" r="22" fill="#2f3cff" stroke="#1b1340" stroke-width="4"/></svg><div class="st">Working</div><h3>Margin confetti</h3><p>Both gutters hold a Memphis collage, pastel at rest. During a turn the colours saturate while circles bob, triangles tumble and squiggles wiggle. When it ends they drain back to pastel.</p></article>
+      <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="mv w" d="M4 32q7-22 14 0t14 0t14 0t14 0" fill="none" stroke="#ff5c9d" stroke-width="9" stroke-linecap="round"/></svg><div class="st">Working</div><h3>Header squiggle</h3><p>The line under the chat header is a wave. It steps sideways for as long as the agent is busy and stops when it is done.</p></article>
+      <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="mv t" d="M32 8l26 46H6z" fill="#ffd23f" stroke="#1b1340" stroke-width="4" stroke-linejoin="round"/></svg><div class="st">Background thread busy</div><h3>Crawling underline</h3><p>A pink squiggle crawls under any busy thread in the sidebar, and under the live <em>Working…</em> row, so you can see which conversations are still thinking.</p></article>
+      <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><rect class="mv" x="10" y="14" width="40" height="34" rx="9" fill="#fff" stroke="#1b1340" stroke-width="4"/><circle class="mv w" cx="52" cy="14" r="8" fill="#ffd23f" stroke="#1b1340" stroke-width="3"/></svg><div class="st">Composer focus</div><h3>The card pops</h3><p>Click into the composer and it lifts on a longer pink shadow while a yellow dot and a blue triangle unfold from its corners.</p></article>
+      <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><path class="mv" d="M8 40a24 24 0 0 1 48 0z" fill="#3fdcb4" stroke="#1b1340" stroke-width="4"/></svg><div class="st">Turn complete</div><h3>Springs back</h3><p>While a turn runs the composer floats on a yellow shadow. When it finishes the composer springs back to rest and the confetti fades to pastel.</p></article>
+      <article class="card"><svg viewBox="0 0 64 64" aria-hidden="true"><rect class="mv w" x="14" y="14" width="34" height="34" rx="4" fill="#ff8a3d" stroke="#1b1340" stroke-width="4"/></svg><div class="st">Narrow windows</div><h3>A slimmer margin</h3><p>Under 1460px the margins slim to one calm column of shapes, and the sidebar keeps only its terrazzo so nothing sits behind thread text. Hover a thread and it leans toward you.</p></article>
+    </div>
+    <figure class="detail"><img src="assets/detail.jpg" alt="Squiggle detail: inked mint code blocks, a pink menu popover with a hard shadow, and a tooltip" width="1000" height="480" loading="lazy"><figcaption>Everything else gets the same treatment: inked edges, hard shadows, mint code, highlighter headings, menus and tooltips.</figcaption></figure>
+  </div>
+</section>
+
+<section class="demo" id="demo">
+  <div class="wrap">
+    <span class="eyebrow">Watch it</span>
+    <h2 class="sec-h">A full turn, start to finish.</h2>
+    <p class="sub">At rest, compose, a turn starts, a background thread goes busy, the turn completes, hover, and the narrow fallback.</p>
+    <div class="film">
+      <video id="demoV" src="assets/demo.mp4" poster="assets/demo.jpg" controls muted playsinline preload="none" aria-label="Captioned walkthrough of the Squiggle theme"></video>
+    </div>
+  </div>
+</section>
+
+<section class="band mint" id="palette">
+  <div class="wrap">
+    <span class="eyebrow">Palette</span>
+    <h2 class="sec-h">One ink, five candies.</h2>
+    <p class="sub">Deep indigo ink for every word, lemon for the sidebar, cobalt for actions, and pink kept for focus and work in progress. Click a row to copy its hex.</p>
+    <div class="pal" id="pal">
+      <button type="button" data-hex="#f6f2ff"><span class="sw" style="background:#f6f2ff"></span><span>Canvas<small>The page behind the chat</small></span><code>#f6f2ff</code></button>
+      <button type="button" data-hex="#ffee9a"><span class="sw" style="background:#ffee9a"></span><span>Sidebar<small>Lemon, with terrazzo</small></span><code>#ffee9a</code></button>
+      <button type="button" data-hex="#ffffff"><span class="sw" style="background:#ffffff"></span><span>Message<small>User bubbles and the composer</small></span><code>#ffffff</code></button>
+      <button type="button" data-hex="#d8f7eb"><span class="sw" style="background:#d8f7eb"></span><span>Code block<small>Mint, inked edge</small></span><code>#d8f7eb</code></button>
+      <button type="button" data-hex="#1b1340"><span class="sw" style="background:#1b1340"></span><span>Ink<small>Every word. 15.7:1 on canvas</small></span><code>#1b1340</code></button>
+      <button type="button" data-hex="#4f4380"><span class="sw" style="background:#4f4380"></span><span>Muted ink<small>Timestamps and hints</small></span><code>#4f4380</code></button>
+      <button type="button" data-hex="#2f3cff"><span class="sw" style="background:#2f3cff"></span><span>Accent<small>Cobalt: send, links, switches</small></span><code>#2f3cff</code></button>
+      <button type="button" data-hex="#ffd23f"><span class="sw" style="background:#ffd23f"></span><span>Secondary<small>Sunny yellow buttons</small></span><code>#ffd23f</code></button>
+      <button type="button" data-hex="#ff2e88"><span class="sw" style="background:#ff2e88"></span><span>Focus<small>Hot pink rings and active work</small></span><code>#ff2e88</code></button>
+      <button type="button" data-hex="#ff9ec8"><span class="sw" style="background:#ff9ec8"></span><span>Open thread<small>The sticker in the sidebar</small></span><code>#ff9ec8</code></button>
+      <button type="button" data-hex="#007d73"><span class="sw" style="background:#007d73"></span><span>Update<small>Teal</small></span><code>#007d73</code></button>
+      <button type="button" data-hex="#b85c00"><span class="sw" style="background:#b85c00"></span><span>Warning<small>Burnt orange</small></span><code>#b85c00</code></button>
+      <button type="button" data-hex="#d1003f"><span class="sw" style="background:#d1003f"></span><span>Error<small>Raspberry</small></span><code>#d1003f</code></button>
+    </div>
+  </div>
+</section>
+
+<section id="install">
+  <div class="wrap">
+    <span class="eyebrow">Install</span>
+    <h2 class="sec-h">Two minutes, tops.</h2>
+    <p class="sub">Works on T3 Code 0.1.11 and up. The theme is one JSON file.</p>
+    <div class="steps">
+      <div class="box">
+        <h3>From the app</h3>
+        <ol><li>Copy the theme JSON, or download the file.</li><li>Open <b>Settings › Appearance › Add theme</b>.</li><li>Paste it, or choose the file, and add it.</li></ol>
+        <div class="row"><button class="btn pri" id="copyJson2" type="button">Copy theme JSON</button><a class="btn yel" href="squiggle.json" download>Download</a></div>
+      </div>
+      <div class="box">
+        <h3>From the terminal</h3>
+<pre id="cli">curl -fsSL -o squiggle.json https://joshsaintjacque.github.io/t3code-theme-squiggle/squiggle.json
+~/.t3/bin/t3 theme set squiggle.json</pre>
+        <div class="copyline"><button class="btn" id="copyCli" type="button">Copy commands</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <svg class="fz" viewBox="0 0 160 20" aria-hidden="true"><path d="M4 10q10-18 20 0t20 0t20 0t20 0t20 0t20 0t20 0" fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round"/></svg>
+    <p>Squiggle is a community theme for T3 Code. It is not affiliated with, endorsed by or sponsored by T3 or its makers.</p>
+    <p>MIT licensed. <a href="https://github.com/joshsaintjacque/t3code-theme-squiggle">Source and build script on GitHub</a>.</p>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+const toast=document.getElementById('toast');let tt;
+function say(m){toast.textContent=m;toast.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toast.classList.remove('on'),1800)}
+async function copy(text,msg){let ok=false;try{await navigator.clipboard.writeText(text);ok=true}catch(e){const t=document.createElement('textarea');t.value=text;document.body.appendChild(t);t.select();try{ok=document.execCommand('copy')}catch(_){}t.remove()}say(ok?msg:'Copy was blocked. Use Download instead.')}
+let jsonP=fetch('squiggle.json').then(r=>{if(!r.ok)throw 0;return r.text()});jsonP.catch(()=>{});
+async function copyJson(){let txt;try{txt=await jsonP}catch(e){say('Could not fetch the file. Use Download instead.');return}await copy(txt,'Theme JSON copied')}
+document.getElementById('copyJson').onclick=copyJson;document.getElementById('copyJson2').onclick=copyJson;
+document.getElementById('copyCli').onclick=()=>copy(document.getElementById('cli').textContent,'Commands copied');
+document.querySelectorAll('#pal button').forEach(b=>b.onclick=()=>{copy(b.dataset.hex,b.dataset.hex+' copied');b.classList.add('ok');setTimeout(()=>b.classList.remove('ok'),900)});
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){const h=document.getElementById('hero');h.removeAttribute('autoplay');h.pause();}
+</script>
+</body>
+</html>
